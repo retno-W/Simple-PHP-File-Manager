@@ -1,111 +1,87 @@
-🔑 Key Features
-🔐 Authentication System
-Admin and user login
+# 📂 FileManager Web App
 
-Role-based access control (admin/user)
+A web-based file manager with a Windows Explorer-like interface, complete with authentication, media previews, user roles, and file operations.
 
-Secure session management
+---
 
-Default admin credentials:
+## 🔑 Key Features
 
-Username: admin
+### 🔐 Authentication System
+- Admin and user login  
+- Role-based access control (admin/user)  
+- Secure session management  
+- **Default admin credentials:**  
+  - Username: `admin`  
+  - Password: `admin123`  
 
-Password: admin123
+### 📁 File Management
+- Folder navigation similar to Windows Explorer  
+- Breadcrumb navigation  
+- List and Grid view modes  
+- Double-click to open files/folders  
+- Right-click context menu with:
+  - Open  
+  - Share  
+  - Download  
+  - Copy  
+  - Cut  
+  - Rename  
+  - Properties  
+  - Delete  
 
-📁 File Management
-Folder navigation similar to Windows Explorer
+### 🔍 Search & Sorting
+- Global search across directories  
+- Sort by name, type, size, and date  
+- Real-time search with input debouncing  
 
-Breadcrumb navigation for easy path tracking
+### 🎨 UI/UX
+- Light/Dark theme toggle  
+- Fully responsive design  
+- Explorer-style layout  
+- Sidebar with Quick Access shortcuts  
+- Dynamic file icons by extension  
 
-Switch between List and Grid view modes
+### 🖼️ Media Preview
+- Gallery mode for images (`.jpg`, `.png`, `.gif`, etc.)  
+- Audio player for `.mp3`, `.wav`  
+- HTML5 video player for `.mp4`, `.webm`  
+- Modal preview for media files  
 
-Double-click to open files or folders
+### 👥 User Management (Admin)
+- Admin dashboard to manage users  
+- Role-based file permissions  
+- Hidden extensions for non-admin users  
+- Auto-hide sensitive files (`.php`, `.htaccess`, etc.)  
 
-Right-click context menu with options:
+### ⚙️ File Operations
+- Create new folders  
+- Rename files/folders  
+- Delete files/folders  
+- File properties dialog  
+- Copy/Cut operations  
+- Download files  
 
-Open
+### ⌨️ Keyboard Shortcuts
 
-Share
+| Shortcut  | Action         |
+|-----------|----------------|
+| Ctrl + C  | Copy           |
+| Ctrl + X  | Cut            |
+| Ctrl + F  | Focus search   |
+| Delete    | Delete file    |
+| F2        | Rename         |
+| Enter     | Open file      |
 
-Download
+---
 
-Copy
+## 🚀 Setup Instructions
 
-Cut
+### 📦 Database Setup
 
-Rename
-
-Properties
-
-Delete
-
-🔍 Search & Sorting
-Global search box to find files/folders
-
-Sort by name, type, size, or date
-
-Real-time search with input debouncing
-
-🎨 UI/UX
-Toggle between Light and Dark themes
-
-Fully responsive design
-
-Windows Explorer-style interface
-
-Sidebar with Quick Access shortcuts
-
-File icons based on file extension
-
-🖼️ Media Preview
-Gallery mode for images (.jpg, .png, .gif, etc.)
-
-Built-in audio player for .mp3, .wav
-
-HTML5 video player for .mp4, .webm
-
-Modal preview for supported media files
-
-👥 User Management (Admin Only)
-Admin dashboard to manage users
-
-Set file permissions by user role
-
-Hide certain file extensions from non-admin users
-
-Auto-hide sensitive files (.php, .htaccess, config files)
-
-⚙️ File Operations
-Create new folders
-
-Rename files and folders
-
-Delete files and folders
-
-View file properties in a dialog
-
-Perform Copy and Cut operations
-
-Download files
-
-⌨️ Keyboard Shortcuts
-Shortcut	Action
-Ctrl + C	Copy
-Ctrl + X	Cut
-Ctrl + F	Focus search
-Delete	Delete file
-F2	Rename
-Enter	Open file/folder
-
-🚀 Setup Instructions
-📦 Database Setup
-Create the database:
-
-sql
-Salin
-Edit
-CREATE DATABASE filemanager;
-Update the database config in the code:
+1. Create the database:
+   ```sql
+   CREATE DATABASE filemanager;
+Update database configuration in the code:
 
 php
 Salin
@@ -117,9 +93,7 @@ $db_config = [
     'password' => 'your_password'
 ];
 🛠 File Permissions
-Ensure the main directories have write permissions
-
-Create required folders if not present:
+Ensure the following directories have write permissions:
 
 uploads/
 
@@ -133,20 +107,19 @@ Username: admin
 Password: admin123
 
 🔒 Security Features
-Auto-hide sensitive files for normal users (e.g., .php, .env, .htaccess)
+Auto-hide sensitive files for non-admin users (e.g., .php, config files)
 
-Role-based access restrictions
+Role-based access control
 
-Protection against SQL injection using prepared statements
+SQL injection protection using prepared statements
 
 XSS protection using htmlspecialchars()
 
 File type restrictions for non-admin users
 
 📱 Mobile Responsive
-Sidebar auto-hides on smaller screens
+Sidebar automatically hides on smaller screens
 
-Touch-friendly interface for tablets and phones
+Touch-friendly interface
 
-Responsive grid layout for flexible content display
-
+Responsive grid layout for optimal viewing on all devices
